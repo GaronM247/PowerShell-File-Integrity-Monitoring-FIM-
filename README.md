@@ -1,4 +1,22 @@
- ﻿Function Calculate-File-Hash($filepath) {
+
+<h2>Description</h2>
+In this lab, we aim to enhance our comprehension of the concept of Integrity in Cyber Security by actively engaging in a demonstration of file integrity monitoring. Through this hands-on demonstration, we will illustrate the practical implementation of hashing algorithms, alongside file integrity monitoring, by conducting live coding to construct a file integrity monitor. This approach will grant us a firsthand and realistic experience of the entire process.
+  
+
+
+<h2>Languages and Utilities Used</h2>
+
+- <b>PowerShell</b> 
+- <b> PowerShell ISE</b>
+- <b> Notepad </b>
+<h2>Environments Used </h2>
+
+- <b>Windows 11 Pro</b> 
+
+<h2>Program walk-through:</h2>
+ - <b> https://imgur.com/lNbCX3y </b> 
+  
+  Function Calculate-File-Hash($filepath) {
     $filehash = Get-FileHash -Path $filepath -Algorithm SHA512
     return $filehash
 }
