@@ -14,7 +14,10 @@ In this lab, we aim to enhance our comprehension of the concept of Integrity in 
 - <b>Windows 11 Pro</b> 
 
 
-  [img]https://i.imgur.com/lNbCX3y.png[/img]
+ 
+
+<h2>STEPS</h2>
+
 
   Function Calculate-File-Hash($filepath) {
     $filehash = Get-FileHash -Path $filepath -Algorithm SHA512
