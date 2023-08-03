@@ -13,12 +13,6 @@ In this lab, we aim to enhance our comprehension of the concept of Integrity in 
 
 ## Program Overview 
 
-<p align="center">
-<img src="https://imgur.com/a/TzlGCKw.png" height="100%" width="100%" alt="https://imgur.com/a/TzlGCKw.png."/>
-</p>
-
-
-
 
 <h2>STEPS</h2>
 
