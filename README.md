@@ -14,7 +14,11 @@ In this lab, we aim to enhance our comprehension of the concept of Integrity in 
 - <b>Windows 11 Pro</b> 
 
 
- 
+ <p align="center">
+Launch the utility: <br/>
+<img src="(https://imgur.com/a/TzlGCKw)png" height="80%" width="80%" alt="Steps"/>
+<br />
+<br />
 
 <h2>STEPS</h2>
 
