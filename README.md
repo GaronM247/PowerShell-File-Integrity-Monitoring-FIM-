@@ -9,16 +9,16 @@ In this lab, we aim to enhance our comprehension of the concept of Integrity in 
 - <b>PowerShell</b> 
 - <b> PowerShell ISE</b>
 - <b> Notepad </b>
-<h2>Environments Used </h2>
+  
 
-- <b>Windows 11 Pro</b> 
+## Program Overview 
+
+<p align="center">
+<img src="https://imgur.com/a/TzlGCKw.png" height="100%" width="100%" alt="https://imgur.com/a/TzlGCKw.png."/>
+</p>
 
 
- <p align="center">
-Launch the utility: <br/>
-<img src="(https://imgur.com/a/TzlGCKw)png" height="80%" width="80%" alt="Steps"/>
-<br />
-<br />
+
 
 <h2>STEPS</h2>
 
