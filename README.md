@@ -4,19 +4,19 @@ In this lab, we aim to enhance our comprehension of the concept of Integrity in 
   
 
 
-<h2>Languages and Utilities Used</h2>
+<h2> Environments & Utilities Used: </h2>
 
 - <b>PowerShell</b> 
 - <b> PowerShell ISE</b>
 - <b> Notepad </b>
   
 
-## Program Overview 
+<h2> Program Overview:</h2> 
 
 ![FIM,imgur](https://i.imgur.com/lKp9QOx.jpeg)
 
 
-<h2>STEPS</h2>
+<h2>   </h2>
 
 
   Function Calculate-File-Hash($filepath) {
