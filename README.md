@@ -11,12 +11,12 @@ In this lab, we aim to enhance our comprehension of the concept of Integrity in 
 - <b> Notepad </b>
   
 
-<h2> Program Overview:</h2> 
+<h2> Visual Overview:</h2> 
 
 ![FIM,imgur](https://i.imgur.com/lKp9QOx.jpeg)
 
 
-<h2>   </h2>
+<h2>Project walk-through:</h2>
 
 
   Function Calculate-File-Hash($filepath) {
