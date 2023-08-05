@@ -6,7 +6,7 @@ In this lab, we aim to enhance our comprehension of the concept of Integrity in 
 
 <h2> Environments & Utilities Used: </h2>
 
-- <b>PowerShell</b> 
+ 
 - <b> PowerShell ISE</b>
 - <b> Notepad </b>
   
