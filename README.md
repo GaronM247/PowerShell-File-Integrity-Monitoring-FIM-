@@ -13,7 +13,7 @@ In this lab, we aim to enhance our comprehension of the concept of Integrity in 
 
 <h2> Visual Overview:</h2> 
 
-![FIM,imgur](https://i.imgur.com/6cqGoPY.jpeg)
+![FIM,imgur](  )
 
 
 <h2>Project walk-through:</h2>
