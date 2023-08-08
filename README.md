@@ -8,7 +8,7 @@ In this lab, we aim to enhance our comprehension of the concept of Integrity in 
 
 
 - <b> Windows OS </b>
-- <b> Windows sandbox</b>
+- <b> Windows Sandbox</b>
 - <b> PowerShell ISE</b>
 - <b> Notepad </b>
   
