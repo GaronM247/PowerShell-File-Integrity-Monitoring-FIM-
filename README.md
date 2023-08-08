@@ -12,10 +12,6 @@ In this lab, I aim to enhance my comprehension of the concept of Integrity in Cy
 - <b> Notepad </b>
   
 
-<h2> Visual Overview:</h2> 
-
-![FIM,imgur](  )
-
 
 <h2>Project walk-through:</h2>
 
