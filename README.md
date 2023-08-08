@@ -19,6 +19,63 @@ In this lab, we aim to enhance our comprehension of the concept of Integrity in 
 
 <h2>Project walk-through:</h2>
 
+- <b>1. Defining Functions: </b> 
+
+   - `Calculate-File-Hash`: This function calculates the SHA-512 hash of a given file and returns the hash value.
+
+   - `Erase-Baseline-If-Already-Exists`: This function checks if the baseline file ("baseline.txt") exists and deletes it if it does.
+
+   - `Collect-New-Baseline`: This function collects a new baseline by calculating hashes for files in the "Files" directory and exporting the information to a CSV file.
+
+   - `Begin-Monitoring`: This function begins the monitoring process by comparing current files with the baseline data and notifying about changes.
+
+- <b> 2. Main Script: </b>
+
+   - The script starts by displaying options to the user using `Write-Host`.
+
+   - It uses `Read-Host` to get the user's choice of action (A or B).
+
+- <b> 3. Collecting New Baseline (Option A):</b>
+
+   - If the user chooses option A:
+
+     - The script pulls up `Collect-New-Baseline` function.
+
+     - Within this function, `Erase-Baseline-If-Already-Exists` removes any existing baseline file.
+
+     - It uses `Get-ChildItem` to retrieve a list of files in the "Files" directory.
+
+     - For each file, it calculates the hash using `Calculate-File-Hash` function and creates a custom object with file path and hash.
+
+     - This data is exported to a CSV file ("baseline.txt").
+
+     - A success message is displayed.
+
+- <b> 4. Monitoring Files (Option B): </b>
+
+   - If the user chooses option B:
+
+     - The script pulls up `Begin-Monitoring` function.
+
+     - Within this function, it imports the baseline data from the CSV file ("baseline.txt").
+
+     - It enters a continuous loop:
+
+       - Retrieves the list of current files using `Get-ChildItem`.
+
+       - For each file, it searches for the corresponding baseline information.
+
+       - If there's no baseline info, it means the file is new, and it notifies accordingly.
+
+       - If baseline info exists, it compares the current hash with the baseline hash. If they differ, it indicates the file has changed.
+
+       - It also checks for deleted files by comparing baseline paths with actual paths.
+
+       - Notifications are displayed using `Write-Host`.
+
+
+
+
 
   Function Calculate-File-Hash($filepath) {
     $filehash = Get-FileHash -Path $filepath -Algorithm SHA512
