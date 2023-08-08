@@ -1,6 +1,6 @@
 
 <h2>Description</h2>
-In this lab, we aim to enhance our comprehension of the concept of Integrity in Cyber Security by actively engaging in a demonstration of file integrity monitoring. Through this hands-on demonstration, we will illustrate the practical implementation of hashing algorithms, alongside file integrity monitoring, by conducting live coding to construct a file integrity monitor, in a Windows sandbox environment. This approach will grant us a firsthand and realistic experience of the entire process.
+In this lab, we aim to enhance our comprehension of the concept of Integrity in Cyber Security by actively engaging in a demonstration of file integrity monitoring. Through this hands-on demonstration, we will illustrate the practical implementation of hashing algorithms, alongside file integrity monitoring, by conducting live coding to construct a file integrity monitor. This approach will grant us a firsthand and realistic experience of the entire process.
   
 
 
@@ -8,7 +8,6 @@ In this lab, we aim to enhance our comprehension of the concept of Integrity in 
 
 
 - <b> Windows OS </b>
-- <b> Windows Sandbox</b>
 - <b> PowerShell ISE</b>
 - <b> Notepad </b>
   
