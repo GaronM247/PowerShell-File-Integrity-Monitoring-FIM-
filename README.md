@@ -43,7 +43,7 @@ In this lab, I aim to enhance my comprehension of the concept of Integrity in Cy
 
      - For each file, it calculates the hash using `Calculate-File-Hash` function and creates a custom object with file path and hash.
 
-     - This data is exported to a CSV file ("baseline.txt").
+     - This data is exported to a file ("baseline.txt").
 
      - A success message is displayed.
 
@@ -53,7 +53,7 @@ In this lab, I aim to enhance my comprehension of the concept of Integrity in Cy
 
      - The script pulls up `Begin-Monitoring` function.
 
-     - Within this function, it imports the baseline data from the CSV file ("baseline.txt").
+     - Within this function, it imports the baseline data from the file ("baseline.txt").
 
      - It enters a continuous loop:
 
