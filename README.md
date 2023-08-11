@@ -1,6 +1,8 @@
 
 <h2>Description</h2>
-In this lab, I aim to enhance my comprehension of the concept of Integrity in Cyber Security by actively engaging in a demonstration of file integrity monitoring. Through this hands-on demonstration, I will illustrate the practical implementation of hashing algorithms, alongside file integrity monitoring, by conducting live coding to construct a file integrity monitor.
+
+"In this lab, I'll walk you through the process of setting up a file integrity monitor using live coding. By demonstrating the practical application of hashing algorithms and file integrity monitoring, you'll learn how to construct a file integrity monitor. This hands-on approach will not only help you grasp the concept of 'Integrity', which is one of the three main triads of Cyber Security, but also empower you to implement these principles effectively."
+
   
 
 
