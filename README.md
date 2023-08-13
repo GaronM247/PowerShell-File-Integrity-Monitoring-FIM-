@@ -17,65 +17,167 @@ In this lab, I'll walk you through the process of setting up a file integrity mo
 
 <h2>Project walk-through:</h2>
 
-- <b>1. Defining Functions: </b> 
+**1. Open PowerShell:** 
 
-   - `Calculate-File-Hash`: This function calculates the SHA-512 hash of a given file and returns the hash value.
+- Ensure you have PowerShell installed on your system. 
 
-   - `Erase-Baseline-If-Already-Exists`: This function checks if the baseline file ("baseline.txt") exists and deletes it if it does.
+- Go to your computer's Start menu. 
 
-   - `Collect-New-Baseline`: This function collects a new baseline by calculating hashes for files in the "Files" directory and exporting the information to a CSV file.
+- Search for "PowerShell" and then select "PowerShell ISE" 
 
-   - `Begin-Monitoring`: This function begins the monitoring process by comparing current files with the baseline data and notifying about changes.
-
-- <b> 2. Main Script: </b>
-
-   - The script starts by displaying options to the user using `Write-Host`.
-
-   - It uses `Read-Host` to get the user's choice of action (A or B).
-
-- <b> 3. Collecting New Baseline (Option A):</b>
-
-   - If the user chooses option A:
-
-     - The script pulls up `Collect-New-Baseline` function.
-
-     - Within this function, `Erase-Baseline-If-Already-Exists` removes any existing baseline file.
-
-     - It uses `Get-ChildItem` to retrieve a list of files in the "Files" directory.
-
-     - For each file, it calculates the hash using `Calculate-File-Hash` function and creates a custom object with file path and hash.
-
-     - This data is exported to a file ("baseline.txt").
-
-     - A success message is displayed.
-
-- <b> 4. Monitoring Files (Option B): </b>
-
-   - If the user chooses option B:
-
-     - The script pulls up `Begin-Monitoring` function.
-
-     - Within this function, it imports the baseline data from the file ("baseline.txt").
-
-     - It enters a continuous loop:
-
-       - Retrieves the list of current files using `Get-ChildItem`.
-
-       - For each file, it searches for the corresponding baseline information.
-
-       - If there's no baseline info, it means the file is new, and it notifies accordingly.
-
-       - If baseline info exists, it compares the current hash with the baseline hash. If they differ, it indicates the file has changed.
-
-       - It also checks for deleted files by comparing baseline paths with actual paths.
-
-       - Notifications are displayed using `Write-Host`.
+ 
 
 
 
+**2. Navigate to Script Directory:** 
 
+- If you have the FIM script in a specific folder, navigate there using PowerShell. 
 
-  Function Calculate-File-Hash($filepath) {
+- Type `cd` followed by the path to your script directory and press Enter. 
+
+  ``` 
+
+  cd C:\Path\To\Your\Script\Directory 
+
+  ``` 
+
+  
+
+**3. Clone Repository (If required):** 
+
+- If the script is in a repository, clone it to your local machine. 
+
+  
+
+**4. Understand the Script:** 
+
+- Open the script file (e.g., `script-name.ps1`) using Notepad or any text editor of your choice. 
+
+- Examine the script to get an idea of its structure and functionality. 
+
+  
+
+**5. Hashes and Variables:** 
+
+- The script calculates hash values using the `Calculate-File-Hash` function and stores them in variables. 
+
+- Open the script and locate the `Calculate-File-Hash` function. Note how it computes the hash using SHA-512 and stores it in the variable `$filehash`. 
+
+  
+
+**6. Monitoring Files:** 
+
+- In your FIM folder, you have files named a.txt, b.txt, c.txt, and d.txt. 
+
+- Use the `Get-ChildItem` command to list the files in the FIM folder. Run the following command in PowerShell: 
+
+  ``` 
+
+  Get-ChildItem -Path .\FIM\Files\ 
+
+  ``` 
+
+  
+
+**7. Baseline Data and Setup:** 
+
+- Choose option A to collect a new baseline: 
+
+  - Delete any existing baseline file by running the `Erase-Baseline-If-Already-Exists` function. 
+
+  - Calculate the hash for each file and store the data in a "baseline.txt" CSV file using the following command: 
+
+    ``` 
+
+    .\script-name.ps1 -Response A 
+
+    ``` 
+
+  
+
+**8. Comparing Changes:** 
+
+- Choose option B to begin monitoring: 
+
+  - Load the baseline data from "baseline.txt": 
+
+    ``` 
+
+    .\script-name.ps1 -Response B 
+
+    ``` 
+
+  - The script enters continuous monitoring mode, calculating hashes and comparing them to the baseline. 
+
+  
+
+**9. Using Information for Change Detection:** 
+
+- The script compares hashes to detect changes. If you suspect changes, run: 
+
+  ``` 
+
+  .\script-name.ps1 -Response B 
+
+  ``` 
+
+  
+
+**10. Checking File Paths:** 
+
+- To check file paths in the "Files" directory of the FIM folder, use: 
+
+  ``` 
+
+  Get-ChildItem -Path .\FIM\Files\ 
+
+  ``` 
+
+  
+
+**11. Comparing Hashes:** 
+
+- After running the script and detecting changes, verify hashes using: 
+
+  ``` 
+
+  .\script-name.ps1 -Response B 
+
+  ``` 
+
+  
+
+**12. Configuring Baseline.txt:** 
+
+- Set up the baseline.txt file within the FIM folder: 
+
+  - Create a new text file named "baseline.txt" within the FIM folder. 
+
+  - In the file, list file paths and their corresponding hash values in CSV format, e.g.: 
+
+    ``` 
+
+    FIM\Files\a.txt,HashValue1 
+
+    FIM\Files\b.txt,HashValue2 
+
+ 
+
+**13. Notifications:** 
+
+   - The script uses color-coded notifications for different scenarios: 
+
+     - Green: New file detected. 
+
+     - Yellow: File has changed. 
+
+     - Dark Red on Gray: File has been deleted. 
+
+ 
+
+# Functions#
+ 
+Function Calculate-File-Hash($filepath) {
     $filehash = Get-FileHash -Path $filepath -Algorithm SHA512
     return $filehash
 }
@@ -88,19 +190,28 @@ Function Erase-Baseline-If-Already-Exists() {
     }
 }
 
+# Display menu options
 
-Write-Host ""
+Write-Host "File Integrity Monitoring Script"
+Write-Host "================================"
+
 Write-Host "What would you like to do?"
-Write-Host ""
 Write-Host "    A) Collect new Baseline?"
 Write-Host "    B) Begin monitoring files with saved Baseline?"
 Write-Host ""
 $response = Read-Host -Prompt "Please enter 'A' or 'B'"
 Write-Host ""
 
+
+# Process user choice
+"====================="
 if ($response -eq "A".ToUpper()) {
     # Delete baseline.txt if it already exists
     Erase-Baseline-If-Already-Exists
+
+
+# Collect baseline data
+"======================="
 
     # Calculate Hash from the target files and store in baseline.txt
     # Collect all files in the target folder
@@ -114,6 +225,8 @@ if ($response -eq "A".ToUpper()) {
     
 }
 
+# Set up dictionary
+"==================="
 elseif ($response -eq "B".ToUpper()) {
     
     $fileHashDictionary = @{}
@@ -130,6 +243,7 @@ elseif ($response -eq "B".ToUpper()) {
         Start-Sleep -Seconds 1
         
         $files = Get-ChildItem -Path .\Files
+        $files
 
         # For each file, calculate the hash, and write to baseline.txt
         foreach ($f in $files) {
@@ -163,3 +277,11 @@ elseif ($response -eq "B".ToUpper()) {
         }
     }
 }
+ 
+
+
+
+
+
+
+
