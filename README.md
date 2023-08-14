@@ -175,7 +175,7 @@ In this lab, I'll walk you through the process of setting up a file integrity mo
 
  
 
-# Functions
+# Functions & Script 
  
 Function Calculate-File-Hash($filepath) {
     $filehash = Get-FileHash -Path $filepath -Algorithm SHA512
@@ -204,15 +204,12 @@ Write-Host ""
 
 
 # Process user choice
-"====================="
 if ($response -eq "A".ToUpper()) {
     # Delete baseline.txt if it already exists
     Erase-Baseline-If-Already-Exists
 
 
 # Collect baseline data
-"======================="
-
     # Calculate Hash from the target files and store in baseline.txt
     # Collect all files in the target folder
     $files = Get-ChildItem -Path .\Files
@@ -226,7 +223,6 @@ if ($response -eq "A".ToUpper()) {
 }
 
 # Set up dictionary
-"==================="
 elseif ($response -eq "B".ToUpper()) {
     
     $fileHashDictionary = @{}
