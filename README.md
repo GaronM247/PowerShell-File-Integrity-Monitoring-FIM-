@@ -175,7 +175,7 @@ In this lab, I'll walk you through the process of setting up a file integrity mo
 
  
 
-# Functions#
+# Functions
  
 Function Calculate-File-Hash($filepath) {
     $filehash = Get-FileHash -Path $filepath -Algorithm SHA512
@@ -249,20 +249,21 @@ elseif ($response -eq "B".ToUpper()) {
         foreach ($f in $files) {
             $hash = Calculate-File-Hash $f.FullName
             #"$($hash.Path)|$($hash.Hash)" | Out-File -FilePath .\baseline.txt -Append
-
-            # Notify if a new file has been created
+            
+# Notifications 
+           # Notify if a new file has been created
             if ($fileHashDictionary[$hash.Path] -eq $null) {
-                # A new file has been created!
+           # A new file has been created!
                 Write-Host "$($hash.Path) has been created!" -ForegroundColor Green
             }
             else {
 
-                # Notify if a new file has been changed
+           # Notify if a new file has been changed
                 if ($fileHashDictionary[$hash.Path] -eq $hash.Hash) {
-                    # The file has not changed
+              # The file has not changed
                 }
                 else {
-                    # File file has been compromised!, notify the user
+               # File file has been compromised!, notify the user
                     Write-Host "$($hash.Path) has changed!!!" -ForegroundColor Yellow
                 }
             }
