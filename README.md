@@ -153,7 +153,7 @@ In this lab, I'll walk you through the process of setting up a file integrity mo
 
   - Create a new text file named "baseline.txt" within the FIM folder. 
 
-  - In the file, list file paths and their corresponding hash values in CSV format, e.g.: 
+  - In the file, list file paths and their corresponding hash values.
 
     ``` 
 
@@ -271,7 +271,7 @@ elseif ($response -eq "B".ToUpper()) {
         foreach ($key in $fileHashDictionary.Keys) {
             $baselineFileStillExists = Test-Path -Path $key
             if (-Not $baselineFileStillExists) {
-                # One of the baseline files must have been deleted, notify the user
+       # One of the baseline files must have been deleted, notify the user
                 Write-Host "$($key) has been deleted!" -ForegroundColor DarkRed -BackgroundColor Gray
             }
         }
