@@ -85,7 +85,7 @@ In this lab, I'll walk you through the process of setting up a file integrity mo
 
   - Delete any existing baseline file by running the `Erase-Baseline-If-Already-Exists` function. 
 
-  - Calculate the hash for each file and store the data in a "baseline.txt" CSV file using the following command: 
+  - Calculate the hash for each file and store the data in a "baseline.txt" file using the following command: 
 
     ``` 
 
